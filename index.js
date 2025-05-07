@@ -49,5 +49,30 @@
     const myCar = new Car("Toyota", 2020, "Corolla");
     // console.log(myCar.getInfo());
     // console.log(myCar.getModel());
+    // Problem 5
+    const processValue = (value) => {
+        if (typeof value === "string") {
+            return value.length;
+        }
+        else if (typeof value === "number") {
+            return value * 2;
+        }
+        else {
+            return "Please Provide Only Number or Password";
+        }
+    };
+    // Problem 6
+    function getMostExpensiveProduct(products) {
+        if (products.length === 0) {
+            return null;
+        }
+        return products.reduce((maxProduct, currentProduct) => currentProduct.price > maxProduct.price ? currentProduct : maxProduct);
+    }
+    const products = [
+        { name: "Pen", price: 10 },
+        { name: "Notebook", price: 25 },
+        { name: "Bag", price: 50 },
+    ];
+    // console.log(getMostExpensiveProduct(products));
     // ////////////////
 }

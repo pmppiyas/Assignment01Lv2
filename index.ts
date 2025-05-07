@@ -67,5 +67,45 @@
   // console.log(myCar.getInfo());
   // console.log(myCar.getModel());
 
+  // Problem 5
+
+  const processValue = (value: string | number): number | string => {
+    if (typeof value === "string") {
+      return value.length;
+    } else if (typeof value === "number") {
+      return value * 2;
+    } else {
+      return "Please Provide Only Number or Password";
+    }
+  };
+  // console.log(processValue("Hello"));
+  // console.log(processValue(10));
+
+  // Problem 6
+
+  interface Product {
+    name: string;
+    price: number;
+  }
+
+  // Problem 6
+  function getMostExpensiveProduct(products: Product[]): Product | null {
+    if (products.length === 0) {
+      return null;
+    }
+
+    return products.reduce((maxProduct, currentProduct) =>
+      currentProduct.price > maxProduct.price ? currentProduct : maxProduct
+    );
+  }
+
+  const products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 },
+  ];
+
+  // console.log(getMostExpensiveProduct(products));
+
   // ////////////////
 }
