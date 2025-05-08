@@ -1,6 +1,15 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 {
-    // Problem 1
+    ////
     function formatString(input, makeUpper) {
         if (makeUpper === true || makeUpper === undefined) {
             return input.toUpperCase();
@@ -9,8 +18,7 @@
             return input.toLowerCase();
         }
     }
-    // console.log(formatString("Piyas"));
-    // Problem 2
+    //
     const books = [
         { title: "Book A", rating: 4.5 },
         { title: "Book B", rating: 3.2 },
@@ -19,15 +27,13 @@
     const filterByRating = (array) => {
         return array.filter((item) => item.rating >= 4);
     };
-    // console.log(filterByRating(books));
-    // Problem 3
+    //
     function concatenateArrays(...arrays) {
         return arrays.reduce((array, currentArray) => {
             return array.concat(currentArray);
         });
     }
-    // console.log(concatenateArrays(["a", "b", "c"], ["d"], ["e", "f"]));
-    // Problem 4
+    //
     class Vahicle {
         constructor(make, year) {
             this._make = make;
@@ -47,9 +53,7 @@
         }
     }
     const myCar = new Car("Toyota", 2020, "Corolla");
-    // console.log(myCar.getInfo());
-    // console.log(myCar.getModel());
-    // Problem 5
+    //
     const processValue = (value) => {
         if (typeof value === "string") {
             return value.length;
@@ -58,7 +62,7 @@
             return value * 2;
         }
         else {
-            return "Please Provide Only Number or Password";
+            return "Please Provide Only String Or Number";
         }
     };
     function getMostExpensiveProduct(products) {
@@ -72,8 +76,7 @@
         { name: "Notebook", price: 25 },
         { name: "Bag", price: 50 },
     ];
-    // console.log(getMostExpensiveProduct(products));
-    // Problem 7
+    //
     let Day;
     (function (Day) {
         Day[Day["Monday"] = 0] = "Monday";
@@ -92,7 +95,20 @@
             return "Weekday";
         }
     }
-    // console.log(getDayType(Day.Monday));
-    // console.log(getDayType(Day.Sunday));
+    //
+    function squareAsync(n) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (n >= 0) {
+                        resolve(n * n);
+                    }
+                    else {
+                        reject(new Error("Negative number not allowed"));
+                    }
+                }, 1000);
+            });
+        });
+    }
     // ////////////////
 }

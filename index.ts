@@ -1,5 +1,5 @@
 {
-  // Problem 1
+  ////
   function formatString(input: string, makeUpper?: boolean): string {
     if (makeUpper === true || makeUpper === undefined) {
       return input.toUpperCase();
@@ -8,9 +8,8 @@
     }
   }
 
-  // console.log(formatString("Piyas"));
+  //
 
-  // Problem 2
   const books = [
     { title: "Book A", rating: 4.5 },
     { title: "Book B", rating: 3.2 },
@@ -26,9 +25,7 @@
     return array.filter((item) => item.rating >= 4);
   };
 
-  // console.log(filterByRating(books));
-
-  // Problem 3
+  //
 
   function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.reduce((array, currentArray) => {
@@ -36,9 +33,7 @@
     });
   }
 
-  // console.log(concatenateArrays(["a", "b", "c"], ["d"], ["e", "f"]));
-
-  // Problem 4
+  //
 
   class Vahicle {
     private _make: string;
@@ -64,10 +59,8 @@
   }
 
   const myCar = new Car("Toyota", 2020, "Corolla");
-  // console.log(myCar.getInfo());
-  // console.log(myCar.getModel());
 
-  // Problem 5
+  //
 
   const processValue = (value: string | number): number | string => {
     if (typeof value === "string") {
@@ -75,13 +68,11 @@
     } else if (typeof value === "number") {
       return value * 2;
     } else {
-      return "Please Provide Only Number or Password";
+      return "Please Provide Only String Or Number";
     }
   };
-  // console.log(processValue("Hello"));
-  // console.log(processValue(10));
 
-  // Problem 6
+  //
 
   interface Product {
     name: string;
@@ -104,9 +95,7 @@
     { name: "Bag", price: 50 },
   ];
 
-  // console.log(getMostExpensiveProduct(products));
-
-  // Problem 7
+  //
 
   enum Day {
     Monday,
@@ -126,8 +115,19 @@
     }
   }
 
-  // console.log(getDayType(Day.Monday));
-  // console.log(getDayType(Day.Sunday));
+  //
+
+  async function squareAsync(n: number): Promise<number> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (n >= 0) {
+          resolve(n * n);
+        } else {
+          reject(new Error("Negative number not allowed"));
+        }
+      }, 1000);
+    });
+  }
 
   // ////////////////
 }
