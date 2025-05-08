@@ -88,7 +88,6 @@
     price: number;
   }
 
-  // Problem 6
   function getMostExpensiveProduct(products: Product[]): Product | null {
     if (products.length === 0) {
       return null;
@@ -106,6 +105,29 @@
   ];
 
   // console.log(getMostExpensiveProduct(products));
+
+  // Problem 7
+
+  enum Day {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday,
+  }
+
+  function getDayType(day: Day): string {
+    if (day === Day.Saturday || day === Day.Sunday) {
+      return "Weekend";
+    } else {
+      return "Weekday";
+    }
+  }
+
+  // console.log(getDayType(Day.Monday));
+  // console.log(getDayType(Day.Sunday));
 
   // ////////////////
 }
